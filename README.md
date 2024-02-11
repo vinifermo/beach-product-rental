@@ -61,3 +61,13 @@ Fique a vontade para adicionar mais funcionalidades ao teste, como: criação de
 etc.
 
 # Boa sorte!!!
+
+##Pré-requisitos
+Este projeto requer Docker para a inicialização da instância do banco de dados PostgreSQL. Certifique-se de ter o Docker instalado em sua máquina.
+
+Execute o comando abaixo no terminal na raiz do projeto para subir a instância do banco:
+
+```bash
+docker compose up
+```
+Isso garantirá que o ambiente de banco de dados esteja configurado corretamente para o desenvolvimento e testes.
