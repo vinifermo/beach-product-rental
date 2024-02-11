@@ -1,5 +1,5 @@
 MERGE INTO product_order (ID, USER_NAME, PRODUCT_TYPE, TIME_HOUR, PRODUCT_VALUE, PRODUCT_TOTAL, USER_AMOUNT)
-    VALUES ('1', 'LewisHamilton', 'SUNSHADE', '16', '4000', '64000', '6592');
+    VALUES ('3', 'LewisHamilton', 'SUNSHADE', '16', '4000', '64000', '6592');
 
 MERGE INTO product_order (ID, USER_NAME, PRODUCT_TYPE, TIME_HOUR, PRODUCT_VALUE, PRODUCT_TOTAL, USER_AMOUNT)
-    VALUES ('2', 'LewisHamilton', 'SURFBOARD', '12', '5000', '60000', '9360');
+    VALUES ('4', 'LewisHamilton', 'SURFBOARD', '12', '5000', '60000', '9360');

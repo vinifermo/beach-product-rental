@@ -1,7 +1,10 @@
 package com.salsatechnology.factory;
 
 import com.salsatechnology.dto.ProductOrderDTO;
+import com.salsatechnology.exception.ProductTypeNotFoundException;
 import com.salsatechnology.model.ProductType;
+
+import static com.salsatechnology.exception.CustomExceptionHandler.PRODUCT_TYPE_NOT_FOUND;
 
 public class ProductFactory {
     public static ProductStrategy getProductFactory(ProductOrderDTO productOrderDTO) {
@@ -19,7 +22,7 @@ public class ProductFactory {
             case BEACH_TABLE:
                 return new BeachTableStrategy();
             default:
-                return null;
+                throw new ProductTypeNotFoundException(PRODUCT_TYPE_NOT_FOUND);
         }
     }
 }

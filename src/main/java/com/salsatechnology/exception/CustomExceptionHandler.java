@@ -15,11 +15,20 @@ import javax.persistence.EntityNotFoundException;
 public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
     public static final String PRODUCT_ORDER_NOT_FOUND_FOR_THIS_USERNAME = "Product order not found for this username";
+    public static final String PRODUCT_TYPE_NOT_FOUND = "Product order not found for this username";
 
     @ResponseBody
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseError handle(EntityNotFoundException ex) {
+        ex.printStackTrace();
+        return new ResponseError(ex.getMessage());
+    }
+
+    @ResponseBody
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(ProductTypeNotFoundException.class)
+    public ResponseError handleProductTypeNotFound(ProductTypeNotFoundException ex) {
         ex.printStackTrace();
         return new ResponseError(ex.getMessage());
     }

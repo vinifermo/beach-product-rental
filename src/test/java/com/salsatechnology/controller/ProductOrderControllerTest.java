@@ -21,7 +21,7 @@ public class ProductOrderControllerTest extends BeachProductRentalApplicationTes
         String uri = fromPath(PRODUCT_ORDER_RESOURCE_PATH).toUriString();
 
         mockMvc.perform(post(uri)
-                        .content(getContentFromResource("/json/create-product-order.json"))
+                        .content(getContentFromResource())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated());
     }

@@ -17,14 +17,14 @@ public class ProductOrderAssembler {
         ProductOrder productOrder = new ProductOrder();
 
         ProductStrategy product = ProductFactory.getProductFactory(productOrderDTO);
-        ProductOrderResolver productResolver = new ProductOrderResolver(productOrderDTO, product);
+        ProductOrderCalculator productOrderCalculator = new ProductOrderCalculator(productOrderDTO, product);
 
         productOrder.setUserName(productOrderDTO.getUserName());
         productOrder.setProductType(productOrderDTO.getProductType());
         productOrder.setTimeHour(productOrderDTO.getTimeHour());
-        productOrder.setProductValue(productResolver.getProductValue());
-        productOrder.setProductTotal(productResolver.getTotalValue());
-        productOrder.setUserAmount(productResolver.getUserAmount());
+        productOrder.setProductValue(productOrderCalculator.getProductValue());
+        productOrder.setProductTotal(productOrderCalculator.getTotalValue());
+        productOrder.setUserAmount(productOrderCalculator.getUserAmount());
 
         return productOrder;
     }

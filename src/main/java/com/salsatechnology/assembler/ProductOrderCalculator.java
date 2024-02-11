@@ -8,13 +8,13 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 @Getter
-public class ProductOrderResolver {
+public class ProductOrderCalculator {
 
     private final Long totalValue;
     private final Long userAmount;
     private final Long productValue;
 
-    public ProductOrderResolver(ProductOrderDTO productOrderDTO, ProductStrategy product) {
+    public ProductOrderCalculator(ProductOrderDTO productOrderDTO, ProductStrategy product) {
         BigDecimal calculatedProductValue = calculateProductValue(product.getProductValue());
         this.productValue = calculatedProductValue.longValue();
 
