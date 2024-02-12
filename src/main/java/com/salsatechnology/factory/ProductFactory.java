@@ -7,6 +7,7 @@ import com.salsatechnology.model.ProductType;
 import static com.salsatechnology.exception.CustomExceptionHandler.PRODUCT_TYPE_NOT_FOUND;
 
 public class ProductFactory {
+
     public static ProductStrategy getProductFactory(ProductOrderDTO productOrderDTO) {
         ProductType productType = productOrderDTO.getProductType();
 
@@ -25,4 +26,5 @@ public class ProductFactory {
                 throw new ProductTypeNotFoundException(PRODUCT_TYPE_NOT_FOUND);
         }
     }
+
 }

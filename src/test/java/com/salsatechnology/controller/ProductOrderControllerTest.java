@@ -14,7 +14,7 @@ import static org.springframework.web.util.UriComponentsBuilder.fromPath;
 
 public class ProductOrderControllerTest extends BeachProductRentalApplicationTests {
 
-    private final String PRODUCT_ORDER_RESOURCE_PATH = "/orders";
+    private final String PRODUCT_ORDER_RESOURCE_PATH = "/productOrders";
 
     @Test
     public void shouldReturnCreatedWhenCreateProductOrder() throws Exception {

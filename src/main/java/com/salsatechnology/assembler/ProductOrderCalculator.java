@@ -15,14 +15,9 @@ public class ProductOrderCalculator {
     private final Long productValue;
 
     public ProductOrderCalculator(ProductOrderDTO productOrderDTO, ProductStrategy product) {
-        BigDecimal calculatedProductValue = calculateProductValue(product.getProductValue());
-        this.productValue = calculatedProductValue.longValue();
-
-        BigDecimal calculatedTotalValue = calculateTotalValue(productOrderDTO.getTimeHour(), calculatedProductValue);
-        this.totalValue = calculatedTotalValue.longValue();
-
-        BigDecimal calculatedUserAmount = calculateUserAmount(productOrderDTO.getTimeHour(), calculatedProductValue, product.getUserValue());
-        this.userAmount = calculatedUserAmount.longValue();
+        this.productValue = calculateProductValue(product.getProductValue()).longValue();
+        this.totalValue = calculateTotalValue(productOrderDTO.getTimeHour(), BigDecimal.valueOf(this.productValue)).longValue();
+        this.userAmount = calculateUserAmount(productOrderDTO.getTimeHour(), BigDecimal.valueOf(this.productValue), product.getUserValue()).longValue();
     }
 
     private BigDecimal calculateProductValue(Long productValue) {
